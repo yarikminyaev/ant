@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="background-image: url(bg.jpg); background-size: 100% 100%">
+	<div >
+		<h1 class="score">0</h1>
+	</div>
+
+	<script type="text/javascript">
+		let point = 0
+		let x = function(){
+			
+
+			let rand = Math.random()*1300
+			let round = Math.round(rand)
+
+			let rand_top = Math.random()*700
+			let round_top = Math.round(rand_top)
+
+			let newDiv = document.createElement('div');
+			document.body.appendChild(newDiv);
+			newDiv.style.height = '100px';
+			newDiv.style.width = '100px';
+			newDiv.style.backgroundImage = "url(img.svg)"
+			newDiv.style.backgroundSize = "100% 100%"
+			newDiv.style.marginLeft = round + 'px';
+			newDiv.style.marginTop = round_top + 'px';
+			newDiv.style.position = 'absolute';
+			newDiv.onclick = function(){
+				newDiv.style.display = 'none';	
+				point = point + 1			
+				document.querySelector(".score").innerHTML = point;
+				
+			}
+
+		}		
+
+		setInterval(x,1000)
+
+		
+	</script>
+</body>
+</html>
